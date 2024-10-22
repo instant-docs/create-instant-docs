@@ -13,6 +13,10 @@ async function main() {
     console.log(`Creating instant-docs at ${projectDir}`);
     copyFolder.cp(templateDir, projectDir);
     console.log('Completed');
+    console.log('First install dependencies with your favourite package manager');
+    console.log('e.g. npm install')
+    console.log('Then start server');
+    console.log('e.g. npm start')
 }
 
 main();
