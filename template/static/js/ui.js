@@ -1,4 +1,22 @@
-(function (window, document) {
+window.onload = () => {
+    document.querySelectorAll('nav a').forEach(a => {
+        if(a.href === location.href){
+            expandAllParentLists(a);
+        }
+    });
+
+    /**
+     * @param {HTMLElement} node 
+     */
+    function expandAllParentLists(node){
+        if (node == undefined) return;
+        if (node.tagName === 'LI'){
+            node.classList.add('expanded');
+        }
+        return expandAllParentLists(node.parentElement);
+    }
+}
+(function () {
     function getElements() {
         return {
             layout: document.getElementById('layout'),
@@ -66,23 +84,4 @@
             parentList.classList.toggle('expanded');
         });
     });
-
-    document.querySelectorAll('nav a').forEach(a => {
-        if(a.href === location.href){
-            expandAllParentLists(a);
-        }
-    });
-
-    /**
-     * @param {HTMLElement} node 
-     */
-    function expandAllParentLists(node){
-        if (node == undefined) return;
-        if (node.tagName === 'LI'){
-            node.classList.add('expanded');
-        }
-        return expandAllParentLists(node.parentElement);
-    }
-
-
-}(this, this.document));
+}());
