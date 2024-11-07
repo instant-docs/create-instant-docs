@@ -9,14 +9,16 @@
     <title>%meta_title%</title>
     <link rel="stylesheet" href="/css/pure-min.css" />
     <link rel="stylesheet" href="/css/sidebar.css" />
-    <script type="text/javascript" src="/js/log-logo.js" ></script>
+    <link rel="stylesheet" href="/css/instajax.css" />
+    <script type="text/javascript" src="/plugins/log-logo.js" ></script>
+    <script type="text/javascript" src="/plugins/instajax.js" ></script>
   </head>
   <body>
+    <div class="instajax-progress-bar loading"></div>
     <div id="layout">
       <div id="menu">
         <nav class="pure-menu">
           %logo%
-
           <ul class="pure-menu-list">
             %nav%
           </ul>
@@ -25,7 +27,6 @@
           <span></span>
         </a>
       </div>
-
       <main id="main">
         %header%
         <div class="content">
@@ -36,7 +37,6 @@
         %footer%
       </main>
     </div>
-
     <script src="/js/ui.js"></script>
     <script type="module" src="/js/search.js" defer></script>
   </body>

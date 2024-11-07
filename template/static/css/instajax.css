@@ -1,0 +1,23 @@
+.instajax-progress-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    height: 2px;
+    background-color: currentColor;
+    z-index: 1001;
+    animation: instajax-progress-bar-loaded .2s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+}
+
+.instajax-progress-bar.loading {
+    animation: instajax-progress-bar-loading 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes instajax-progress-bar-loading {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+@keyframes instajax-progress-bar-loaded {
+    to { width: 100%; }
+}
