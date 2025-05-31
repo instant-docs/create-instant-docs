@@ -22,7 +22,8 @@ window.onload = () => {
             layout: document.getElementById('layout'),
             menu: document.getElementById('menu'),
             menuLink: document.getElementById('menuLink'),
-            searchResultContainer: document.getElementById('search-result-container')
+            searchResultContainer: document.getElementById('search-result-container'),
+            versionOptions: document.getElementById('version-options')
         };
     }
     const elements = getElements();
@@ -55,10 +56,12 @@ window.onload = () => {
      * @param {MouseEvent} e 
      */
     function handleEvent(e) {        
+        const clickAllowedElements = [elements.menu].filter(e => !!e);
+        const isInAllowedElement = clickAllowedElements.some(allowedElement => allowedElement.contains(e.target));
         if (e.target.id === elements.menuLink.id) {
             toggleAll();
             e.preventDefault();
-        } else if (elements.menu.classList.contains('active')) {
+        } else if (!isInAllowedElement && elements.menu.classList.contains('active')) {
             toggleAll();
         }
 

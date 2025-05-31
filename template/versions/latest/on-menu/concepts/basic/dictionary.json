@@ -1,0 +1,36 @@
+{
+  "en": {
+    "title": "Basic Concepts in Node.js",
+    "intro_paragraph": "Understanding these key concepts will help you get started with Node.js more effectively:",
+    "event_loop_heading": "Event Loop",
+    "event_loop_content": "Node.js uses a single-threaded event loop model to handle asynchronous events as they occur, allowing it to perform many operations at once without blocking the main thread.",
+    "how_it_works_heading": "How It Works:",
+    "event_driven_bullet": "Event Driven:",
+    "event_driven_content": "Node.js can respond to an event by executing a callback function asynchronously. This means that instead of waiting for a task to complete before moving on to the next one, Node.js will move on to the next operation as soon as it has finished processing the current one.",
+    "non_blocking_io_bullet": "Non-blocking I/O:",
+    "non_blocking_io_content": "Since Node.js is single-threaded, its efficiency comes from not blocking calls but rather queuing events and allowing other operations to continue during long-running operations. This allows Node.js to handle many simultaneous connections with a single thread without getting bogged down by blocking calls or requiring more resources than necessary.",
+    "non_blocking_io_main_heading": "Non-blocking I/O",
+    "non_blocking_io_main_content": "All APIs of Node.js are asynchronous and non-blocking. This means that even if you have multiple requests, the server won't wait for each operation to complete before moving on to the next one, making it very efficient in handling many connections.",
+    "asynchronous_operations_bullet": "Asynchronous Operations:",
+    "asynchronous_operations_content": "Unlike traditional servers where every request waits until the previous one has been processed, Node.js allows other operations to continue while waiting for network requests or file I/O operations. This means that your server can handle multiple requests at once without getting bogged down by slow operations like reading files or database queries.",
+    "event_driven_programming_bullet": "Event-driven Programming:",
+    "event_driven_programming_content": "When an asynchronous operation completes (e.g., a database query has returned), the event is detected and the callback function is executed, allowing other code to run while waiting for I/O operations to complete. This makes Node.js highly scalable as it can handle more requests without requiring more CPU or memory resources than necessary."
+  },
+  "fr": {
+    "title": "Concepts de Base dans Node.js",
+    "intro_paragraph": "Comprendre ces concepts clés vous aidera à démarrer avec Node.js de manière plus efficace :",
+    "event_loop_heading": "Boucle d'Événements",
+    "event_loop_content": "Node.js utilise un modèle de boucle d'événements à thread unique pour gérer les événements asynchrones à mesure qu'ils se produisent, lui permettant d'effectuer de nombreuses opérations à la fois sans bloquer le thread principal.",
+    "how_it_works_heading": "Comment cela fonctionne :",
+    "event_driven_bullet": "Piloté par les Événements :",
+    "event_driven_content": "Node.js peut répondre à un événement en exécutant une fonction de rappel de manière asynchrone. Cela signifie qu'au lieu d'attendre qu'une tâche se termine avant de passer à la suivante, Node.js passera à l'opération suivante dès qu'il aura terminé de traiter celle en cours.",
+    "non_blocking_io_bullet": "E/S Non Bloquantes :",
+    "non_blocking_io_content": "Puisque Node.js est monothread, son efficacité provient du fait qu'il ne bloque pas les appels mais place plutôt les événements en file d'attente, permettant à d'autres opérations de continuer pendant les opérations de longue durée. Cela permet à Node.js de gérer de nombreuses connexions simultanées avec un seul thread sans être ralenti par des appels bloquants ou nécessiter plus de ressources que nécessaire.",
+    "non_blocking_io_main_heading": "E/S Non Bloquantes",
+    "non_blocking_io_main_content": "Toutes les API de Node.js sont asynchrones et non bloquantes. Cela signifie que même si vous avez plusieurs requêtes, le serveur n'attendra pas que chaque opération se termine avant de passer à la suivante, le rendant très efficace pour gérer de nombreuses connexions.",
+    "asynchronous_operations_bullet": "Opérations Asynchrones :",
+    "asynchronous_operations_content": "Contrairement aux serveurs traditionnels où chaque requête attend que la précédente soit traitée, Node.js permet à d'autres opérations de continuer pendant qu'il attend des requêtes réseau ou des opérations d'E/S de fichiers. Cela signifie que votre serveur peut gérer plusieurs requêtes à la fois sans être ralenti par des opérations lentes comme la lecture de fichiers ou les requêtes de base de données.",
+    "event_driven_programming_bullet": "Programmation Pilotée par Événements :",
+    "event_driven_programming_content": "Lorsqu'une opération asynchrone se termine (par exemple, une requête de base de données a renvoyé un résultat), l'événement est détecté et la fonction de rappel est exécutée, permettant à d'autres codes de s'exécuter pendant que les opérations d'E/S se terminent. Cela rend Node.js hautement évolutif car il peut gérer plus de requêtes sans nécessiter plus de ressources CPU ou mémoire que nécessaire."
+  }
+}

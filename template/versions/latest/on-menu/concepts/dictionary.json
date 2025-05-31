@@ -1,0 +1,12 @@
+{
+  "en": {
+    "concept_title": "Concepts in Node.js",
+    "basic_link_text": "Basic",
+    "advanced_link_text": "Advanced"
+  },
+  "fr": {
+    "concept_title": "Concepts dans Node.js",
+    "basic_link_text": "Basique",
+    "advanced_link_text": "Avancé"
+  }
+}

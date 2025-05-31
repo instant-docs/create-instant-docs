@@ -25,7 +25,7 @@ const search = debounceByKey("searchInput")(e => {
   document.getElementById('search-result-container').classList.remove('hide');
   if(!searchIndex && !fetching){
     fetching = true;
-    fetch(`/search_index_${window.lang}.json`, { cache: 'force-cache' })
+    fetch(window.getLink({ slug: '/search_index.json' }), { cache: 'force-cache' })
     .then(response => response.blob())
     .then(blob => blob.text())
     .then(text => {
@@ -45,12 +45,11 @@ const searchOptions = {
   shouldSort: true,
   includeMatches: true,
   keys: ['cleanText'],
+  threshold: 0.3,
 }
 function fullTextSearch(input, index){
   const f = new Fuse(index, searchOptions);
-  // console.log(f.search(input));
   const matches = f.search(input);
-  console.log(matches);
   renderSearchResults(matches);
   searchContext.loading = false;
 }
