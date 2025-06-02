@@ -1,6 +1,7 @@
 window.onload = () => {
     document.querySelectorAll('nav a').forEach(a => {
         if(a.href === location.href){
+            a.setAttribute('aria-current', 'page');
             expandAllParentLists(a);
         }
     });
@@ -10,8 +11,8 @@ window.onload = () => {
      */
     function expandAllParentLists(node){
         if (node == undefined) return;
-        if (node.tagName === 'LI'){
-            node.classList.add('expanded');
+        if (node.tagName === 'LI' && node.role === "group"){
+            node.setAttribute('aria-expanded', 'true');
         }
         return expandAllParentLists(node.parentElement);
     }
@@ -27,64 +28,48 @@ window.onload = () => {
         };
     }
     const elements = getElements();
-    function toggleClass(element, className) {
-        var classes = element.className.split(/\s+/);
-        var length = classes.length;
-        var i = 0;
 
-        for (; i < length; i++) {
-            if (classes[i] === className) {
-                classes.splice(i, 1);
-                break;
-            }
-        }
-        // The className is not found
-        if (length === classes.length) {
-            classes.push(className);
-        }
-
-        element.className = classes.join(' ');
+    function toggleActiveState() {
+        const isActive = elements.layout.dataset.active === 'true';
+        elements.layout.dataset.active = !isActive;
+        elements.menu.dataset.active = !isActive;
+        elements.menuLink.dataset.active = !isActive;
     }
-    function toggleAll() {
-        var active = 'active';
 
-        toggleClass(elements.layout, active);
-        toggleClass(elements.menu, active);
-        toggleClass(elements.menuLink, active);
-    }
     /**
-     * @param {MouseEvent} e 
+     * @param {MouseEvent} e
      */
-    function handleEvent(e) {        
+    function handleEvent(e) {
         const clickAllowedElements = [elements.menu].filter(e => !!e);
         const isInAllowedElement = clickAllowedElements.some(allowedElement => allowedElement.contains(e.target));
         if (e.target.id === elements.menuLink.id) {
-            toggleAll();
+            toggleActiveState();
             e.preventDefault();
-        } else if (!isInAllowedElement && elements.menu.classList.contains('active')) {
-            toggleAll();
+        } else if (!isInAllowedElement && elements.menu.dataset.active === 'true') {
+            toggleActiveState();
         }
 
         if(e.target.id !== 'search-bar' && !elements.searchResultContainer.contains(e.target)){
-            elements.searchResultContainer.classList.add('hide');
+            elements.searchResultContainer.dataset.hide = 'true';
         }
     }
     document.addEventListener('click', handleEvent);
     const searchBar = document.getElementById("search-bar");
     searchBar.addEventListener("focus", () => {
-        getElements().searchResultContainer.classList.remove("hide");
+        getElements().searchResultContainer.dataset.hide = 'false';
     });
     searchBar.addEventListener("blur", (e) => {
         if(e.relatedTarget.id !== 'search-bar' && !elements.searchResultContainer.contains(e.relatedTarget)){
-            elements.searchResultContainer.classList.add('hide');
+            elements.searchResultContainer.dataset.hide = 'true';
         }
     });
     
-    const expandButtons = document.querySelectorAll('.expand-button');
+    const expandButtons = document.querySelectorAll('label input[type="checkbox"]');
     expandButtons.forEach(button => {
         button.addEventListener('change', function(){
             const parentList = this.parentElement.parentElement.parentElement;
-            parentList.classList.toggle('expanded');
+            const isExpanded = parentList.getAttribute('aria-expanded') === 'true';
+            parentList.setAttribute('aria-expanded', !isExpanded);
         });
     });
 }());

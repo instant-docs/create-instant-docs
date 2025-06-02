@@ -23,7 +23,10 @@
     "performance_considerations_heading": "Performance Considerations",
     "performance_considerations_content": "While Node.js is designed for scalability, it's still important to be mindful of performance considerations such as memory usage and CPU consumption. Using streams effectively can help in managing memory efficiently, while understanding the event loop and how asynchronous operations are handled can prevent potential bottlenecks. Tools like `Node Inspector` or profiling tools built into most modern browsers can also help you debug performance issues.",
     "conclusion_heading": "Conclusion",
-    "conclusion_content": "Understanding these advanced concepts will not only make your Node.js applications more robust but also enable you to write code that is both scalable and efficient. As with any technology, practice and experimentation are key to mastering these techniques, so consider working on some side projects or contributing to open-source projects where you can apply what you've learned in real-world scenarios."
+    "conclusion_content": "Understanding these advanced concepts will not only make your Node.js applications more robust but also enable you to write code that is both scalable and efficient. As with any technology, practice and experimentation are key to mastering these techniques, so consider working on some side projects or contributing to open-source projects where you can apply what you've learned in real-world scenarios.",
+    "meta_description": "Apprenez les concepts avancés de Node.js, y compris la boucle d'événements, le module cluster et plus encore.",
+    "meta_keywords": ["node.js", "concept avancé", "boucle d'événements", "module cluster", "performance", "asynchronous operations", "event loop", "cluster module", "error handling", "promises"],
+    "meta_menuOrder": 2
   },
   "fr": {
     "title": "Concepts Avancés dans Node.js",
@@ -49,6 +52,9 @@
     "performance_considerations_heading": "Considérations de Performance",
     "performance_considerations_content": "Bien que Node.js soit conçu pour l'évolutivité, il est toujours important de prêter attention à des considérations de performance telles que l'utilisation de la mémoire et la consommation CPU. Utiliser efficacement les flux peut aider à gérer la mémoire de manière efficace, tandis que la compréhension de la boucle d'événements et la gestion des opérations asynchrones peuvent prévenir les goulets d'étranglement potentiels. Des outils comme `Node Inspector` ou les outils de profilage intégrés dans la plupart des navigateurs modernes peuvent également vous aider à déboguer les problèmes de performance.",
     "conclusion_heading": "Conclusion",
-    "conclusion_content": "Comprendre ces concepts avancés rendra vos applications Node.js non seulement plus robustes, mais vous permettra également d'écrire du code à la fois évolutif et efficace. Comme pour toute technologie, la pratique et l'expérimentation sont la clé pour maîtriser ces techniques, alors envisagez de travailler sur des projets parallèles ou de contribuer à des projets open source où vous pouvez appliquer ce que vous avez appris dans des scénarios réels."
+    "conclusion_content": "Comprendre ces concepts avancés rendra vos applications Node.js non seulement plus robustes, mais vous permettra également d'écrire du code à la fois évolutif et efficace. Comme pour toute technologie, la pratique et l'expérimentation sont la clé pour maîtriser ces techniques, alors envisagez de travailler sur des projets parallèles ou de contribuer à des projets open source où vous pouvez appliquer ce que vous avez appris dans des scénarios réels.",
+    "meta_description": "Apprenez les concepts avancés de Node.js, y compris la boucle d'événements, le module cluster et plus encore.",
+    "meta_keywords": ["node.js", "concept avancé", "boucle d'événements", "module cluster", "performance", "asynchronous operations", "event loop", "cluster module", "error handling", "promises"],
+    "meta_menuOrder": 2
   }
 }

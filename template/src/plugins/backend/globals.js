@@ -21,7 +21,7 @@ export default function setGlobals({ html, meta, lang, dir }) {
     .replaceAll('backend.version', `'${version}'`);
 
 
-  $('head').append(
+  $('head').prepend(
     `
     <script>
         window.globals = ${JSON.stringify({ meta, lang, dir, version })};

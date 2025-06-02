@@ -29,7 +29,11 @@
     "fedora_default_repo_content": "Update your package index:\n```sh\nsudo dnf update\n```\nInstall Node.js and npm using `dnf`:\n```sh\nsudo dnf install nodejs\n```",
     "fedora_verify_installation_step": "Verify Installation:",
     "fedora_verify_installation_content": "Open a Terminal.\nType `node -v` to check the Node.js version.\nType `npm -v` to check the npm version.",
-    "conclusion_paragraph": "By following these steps, you should have Node.js and npm installed on your Windows, macOS, Ubuntu/Debian, or Fedora system."
+    "conclusion_paragraph": "By following these steps, you should have Node.js and npm installed on your Windows, macOS, Ubuntu/Debian, or Fedora system.",
+    "meta_title": "Installing Node.js",
+    "meta_description": "How to install Node.js on your computer.",
+    "meta_keywords": ["node.js", "install", "how to"],
+    "meta_menuOrder": 2
   },
   "fr": {
     "intro_paragraph": "Voici un guide étape par étape pour installer Node.js sur Windows, macOS et les distributions Linux populaires telles qu'Ubuntu/Debian et Fedora.",
@@ -61,6 +65,10 @@
     "fedora_default_repo_content": "Mettez à jour votre index de paquets :\n```sh\nsudo dnf update\n```\nInstallez Node.js et npm en utilisant `dnf` :\n```sh\nsudo dnf install nodejs\n```",
     "fedora_verify_installation_step": "Vérifier l'Installation:",
     "fedora_verify_installation_content": "Ouvrez un Terminal.\nTapez `node -v` pour vérifier la version de Node.js.\nTapez `npm -v` pour vérifier la version de npm.",
-    "conclusion_paragraph": "En suivant ces étapes, vous devriez avoir Node.js et npm installés sur votre système Windows, macOS, Ubuntu/Debian ou Fedora."
+    "conclusion_paragraph": "En suivant ces étapes, vous devriez avoir Node.js et npm installés sur votre système Windows, macOS, Ubuntu/Debian ou Fedora.",
+    "meta_title": "Installer Node.js",
+    "meta_description": "Comment installer Node.js sur votre ordinateur.",
+    "meta_keywords": ["node.js", "installer", "comment"],
+    "meta_menuOrder": 2
   }
 }

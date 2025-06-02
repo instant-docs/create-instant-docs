@@ -1,5 +1,6 @@
 // take a look at the developer console in your browser ;)p
 window.addEventListener('load', () => {
+  if(!window.id_logo_logged)
     console.log(`
  ██▓ ███▄    █   ██████ ▄▄▄█████▓ ▄▄▄       ███▄    █ ▄▄▄█████▓
 ▓██▒ ██ ▀█   █ ▒██    ▒ ▓  ██▒ ▓▒▒████▄     ██ ▀█   █ ▓  ██▒ ▓▒
@@ -21,4 +22,5 @@ window.addEventListener('load', () => {
    ░        ░ ░  ░ ░            ░                              
  ░               ░                                             
         `);
+  window.id_logo_logged = true;
 });

@@ -2,11 +2,17 @@
   "en": {
     "concept_title": "Concepts in Node.js",
     "basic_link_text": "Basic",
-    "advanced_link_text": "Advanced"
+    "advanced_link_text": "Advanced",
+    "keywords": ["node.js", "architecture", "concept"],
+    "meta_description": "Learn the basics of Node.js, including its architecture and how it works.",
+    "meta_menuOrder": 3
   },
   "fr": {
     "concept_title": "Concepts dans Node.js",
     "basic_link_text": "Basique",
-    "advanced_link_text": "Avancé"
+    "advanced_link_text": "Avancé",
+    "keywords": ["node.js", "architecture", "concept"],
+    "meta_description": "Apprenez les concepts de base de Node.js, y compris sa structure et son fonctionnement.",
+    "meta_menuOrder": 3
   }
 }

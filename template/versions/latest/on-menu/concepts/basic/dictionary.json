@@ -1,6 +1,7 @@
 {
   "en": {
     "title": "Basic Concepts in Node.js",
+    "keywords": ["node.js", "javascript", "backend", "event loop"],
     "intro_paragraph": "Understanding these key concepts will help you get started with Node.js more effectively:",
     "event_loop_heading": "Event Loop",
     "event_loop_content": "Node.js uses a single-threaded event loop model to handle asynchronous events as they occur, allowing it to perform many operations at once without blocking the main thread.",
@@ -18,6 +19,7 @@
   },
   "fr": {
     "title": "Concepts de Base dans Node.js",
+    "keywords": ["node.js", "javascript", "backend", "event loop"],
     "intro_paragraph": "Comprendre ces concepts clés vous aidera à démarrer avec Node.js de manière plus efficace :",
     "event_loop_heading": "Boucle d'Événements",
     "event_loop_content": "Node.js utilise un modèle de boucle d'événements à thread unique pour gérer les événements asynchrones à mesure qu'ils se produisent, lui permettant d'effectuer de nombreuses opérations à la fois sans bloquer le thread principal.",

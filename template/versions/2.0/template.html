@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="%meta_description%" />
+    <meta name="keywords" content="%meta_keywords%" />
     <link rel="icon" href="/static/assets/favicon.svg">
     <title>%meta_title%</title>
-    <link rel="stylesheet" href="/static/css/pure-min.css" />
+    <!-- <link rel="stylesheet" href="/static/css/pure-min.css" /> -->
     <link rel="stylesheet" href="/static/css/sidebar.css" />
+    <link rel="stylesheet" href="/static/css/base.css" />
     <link rel="stylesheet" href="/static/css/instajax.css" />
     <script type="text/javascript" src="/static/plugins/log-logo.js" ></script>
     <script type="text/javascript" src="/static/plugins/instajax.js" ></script>
@@ -16,26 +18,24 @@
   <body>
     <div class="instajax-progress-bar loading"></div>
     <div id="layout">
-      <div id="menu">
-        <nav class="pure-menu">
+      <aside id="menu">
+        <header>
           %logo%
-          <ul class="pure-menu-list">
-            %nav%
-          </ul>
-        </nav>
-        <a href="#menu" id="menuLink" class="menu-link">
+          %nav%
+        </header>
+        <a href="#menu" id="menuLink" aria-label="Toggle menu">
           <span></span>
         </a>
-      </div>
-      <main id="main">
+      </aside>
+      <main>
         %header%
-        <div class="content">
+        <article>
           %search%
-          <section id="table-of-contents">%generated_table_of_contents%</section>
+          %generated_table_of_contents%
           %content%
-        </div>
-        %footer%
+        </article>
       </main>
+      %footer%
     </div>
     <script src="/static/js/ui.js"></script>
     <script type="module" src="/static/js/search.js" defer></script>

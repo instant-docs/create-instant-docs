@@ -1,8 +1,8 @@
 import { metadata } from "instant-docs/helpers/index.js";
 
 export default metadata({
-    title: 'Installing Node.js',
-    description: 'How to install Node.js on your computer.',
-    keywords: ['node.js', 'install', 'how to'],
-    menuOrder: 2
+    title: '%d%.meta_title',
+    description: '%d%.meta_description',
+    keywords: '%d%.meta_keywords',
+    menuOrder: '%d%.meta_menuOrder'
 });

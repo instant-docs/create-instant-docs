@@ -15,8 +15,8 @@ importers:
         specifier: ^1.7.1
         version: 1.7.1
       instant-docs:
-        specifier: ^3.1.0
-        version: 3.1.0
+        specifier: ^3.2.1
+        version: 3.2.1
     devDependencies:
       nodemon:
         specifier: ^3.1.10
@@ -279,9 +279,17 @@ packages:
   css-select@5.1.0:
     resolution: {integrity: sha512-nwoRF1rvRRnnCqqY7updORDsuqKzqYJ28+oSMaJMMgOauh3fvwHqMS7EZpIPqK8GL+g9mKxF1vP/ZjSeNjEVHg==}
 
+  css-tree@2.2.1:
+    resolution: {integrity: sha512-OA0mILzGc1kCOCSJerOeqDxDQ4HOh+G8NbOJFOTgOCzpw7fCBubk0fEyxp8AgOL/jvLgYA/uV0cMbe43ElF1JA==}
+    engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
+
   css-what@6.1.0:
     resolution: {integrity: sha512-HTUrgRJ7r4dsZKU6GjmpfRK1O76h97Z8MfS1G0FozR+oF2kG6Vfe8JE6zwrkbxigziPHinCJ+gCPjA9EaBDtRw==}
     engines: {node: '>= 6'}
+
+  csso@5.0.5:
+    resolution: {integrity: sha512-0LrrStPOdJj+SPCCrGhzryycLjwcgUSHBtxNA8aIDxf0GLsRh1cKYhB00Gd1lDOS4yGH69+SNn13+TWbVHETFQ==}
+    engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
 
   debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -464,6 +472,9 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
+  htmlfy@0.7.5:
+    resolution: {integrity: sha512-woog97QSD0MJVXDs4nNz3S/XIb+wa/UgunpaI29tbXaTB9SlNvQalw1XolE4m3BPp3xkJMx96I27Lb/clesPLA==}
+
   htmlparser2@9.1.0:
     resolution: {integrity: sha512-5zfg6mHUoaer/97TxnGpxmbR7zJtPwIYFMZ/H5ucTlPZhKvtum05yiPK3Mgai3a0DyVxv7qYqoweaEd2nrYQzQ==}
 
@@ -488,8 +499,8 @@ packages:
   instajax@1.7.1:
     resolution: {integrity: sha512-mhmqaTRH0l0E/sZZ5K6AJop89Fw4cSqrifd/7gBKxPCvc0O+pvsaKgwIPLnTf8YFJpuckyJIGaHo0y8/WKPo/g==}
 
-  instant-docs@3.1.0:
-    resolution: {integrity: sha512-KRJV/Ayr9EmvLFghBX7RI8pWVX6eE7LFHwq8fCN/wOG30VHA++OoRgjN4r0IFulvteCr6Qv3NWLmMKHcgeNUqg==}
+  instant-docs@3.2.1:
+    resolution: {integrity: sha512-Lo/0EhNVlIaG+l3H0MBkZ+H1nxgfSEXZgrtIRM1y1Qyg9pQJFj2Bo0EtRHR/rMHHO6IIutQEUoe7gQ7J5PbnXQ==}
     hasBin: true
 
   ipaddr.js@1.9.1:
@@ -515,6 +526,9 @@ packages:
   math-intrinsics@1.1.0:
     resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}
     engines: {node: '>= 0.4'}
+
+  mdn-data@2.0.28:
+    resolution: {integrity: sha512-aylIc7Z9y4yzHYAJNuESG3hfhC+0Ibp/MAMiaOZgNv4pmEdFyfZhhhny4MNiAfWdBQ1RQ2mfDWmM1x8SvGyp8g==}
 
   media-typer@0.3.0:
     resolution: {integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==}
@@ -672,6 +686,10 @@ packages:
   slash@5.1.0:
     resolution: {integrity: sha512-ZA6oR3T/pEyuqwMgAKT0/hAv8oAXckzbkmR0UkUosQ+Mc4RxGoJkRmwHgHufaenlyAgE1Mxgpdcrf75y6XcnDg==}
     engines: {node: '>=14.16'}
+
+  source-map-js@1.2.1:
+    resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
+    engines: {node: '>=0.10.0'}
 
   statuses@2.0.1:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
@@ -943,7 +961,16 @@ snapshots:
       domutils: 3.2.2
       nth-check: 2.1.1
 
+  css-tree@2.2.1:
+    dependencies:
+      mdn-data: 2.0.28
+      source-map-js: 1.2.1
+
   css-what@6.1.0: {}
+
+  csso@5.0.5:
+    dependencies:
+      css-tree: 2.2.1
 
   debug@2.6.9:
     dependencies:
@@ -1161,6 +1188,8 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
+  htmlfy@0.7.5: {}
+
   htmlparser2@9.1.0:
     dependencies:
       domelementtype: 2.3.0
@@ -1190,14 +1219,16 @@ snapshots:
 
   instajax@1.7.1: {}
 
-  instant-docs@3.1.0:
+  instant-docs@3.2.1:
     dependencies:
       axios: 1.9.0
       cheerio: 1.0.0
       copy-folder-util: 1.1.5
+      csso: 5.0.5
       dotenv: 16.5.0
       esbuild: 0.24.2
       express: 4.21.2
+      htmlfy: 0.7.5
       pkg-dir: 8.0.0
       showdown: 2.1.0
     transitivePeerDependencies:
@@ -1219,6 +1250,8 @@ snapshots:
   is-number@7.0.0: {}
 
   math-intrinsics@1.1.0: {}
+
+  mdn-data@2.0.28: {}
 
   media-typer@0.3.0: {}
 
@@ -1390,6 +1423,8 @@ snapshots:
       semver: 7.7.2
 
   slash@5.1.0: {}
+
+  source-map-js@1.2.1: {}
 
   statuses@2.0.1: {}
 

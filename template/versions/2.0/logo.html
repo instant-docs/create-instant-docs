@@ -21,12 +21,22 @@
   }
 
   #logo {
+    display: block;
     height: 2em;
+    width: 150px;
+    background-image: url('/static/assets/logo_dark.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
+  /* dark mode media query */
+  @media (prefers-color-scheme: dark) {
+    #logo {
+      background-image: url('/static/assets/logo.svg');
+    }
+  }   
 </style>
 <div id="logo-wrapper">
-  <a href="%home_link%">
-    <img id="logo" src="/static/assets/logo.svg" />
-  </a>
+  <a href="%home_link%" id="logo"></a>
   %version_options%
 </div>

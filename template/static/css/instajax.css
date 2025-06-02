@@ -1,4 +1,4 @@
-.instajax-progress-bar{
+.instajax-progress-bar {
     position: fixed;
     top: 0;
     left: 0;
@@ -6,16 +6,13 @@
     opacity: 0;
     box-sizing: border-box;
     height: 2px;
-    background-color: currentColor;
+    background-color: rgb(var(--accent));
     z-index: 1001;
     transition: width 2s ease-out;
-    animation: instajax-progress-bar-completed .5s cubic-bezier(0.4, 0, 0.6, 1) 1;
-    transition: opacity .5s;
-    transition-delay: .5s;
+    animation: instajax-progress-bar-completed 1s cubic-bezier(0.4, 0, 0.6, 1) 1;
 }
 
 .instajax-progress-bar.loading {
-    transition: none;
     opacity: 1;
     animation-name: instajax-progress-bar-progress;
     animation-duration: 10s;
@@ -23,13 +20,36 @@
 }
 
 @keyframes instajax-progress-bar-progress {
-    0% { width: 0%; }
-    20% { width: 30%; }
-    80% { width: 70%; }
-    100% { width: 100%; }
+    0% {
+        width: 0%;
+    }
+
+    20% {
+        width: 30%;
+    }
+
+    80% {
+        width: 70%;
+    }
+
+    100% {
+        width: 100%;
+    }
 }
 
 @keyframes instajax-progress-bar-completed {
-    0% { width: 0%; }
-    100% { width: 100%; }
+    0% {
+        width: 0%;
+        opacity: 1;
+    }
+
+    50% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    100% {
+        width: 100%;
+        opacity: 0;
+    }
 }

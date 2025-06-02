@@ -19,10 +19,10 @@ function debounceByKey(key, ms = 750) {
 const search = debounceByKey("searchInput")(e => {
   const input = e.target.value;
   if(input === ''){
-    document.getElementById('search-result-container').classList.add('hide');
+    document.getElementById('search-result-container').dataset.hide = "true";
     return;
   }
-  document.getElementById('search-result-container').classList.remove('hide');
+  document.getElementById('search-result-container').dataset.hide = "false";
   if(!searchIndex && !fetching){
     fetching = true;
     fetch(window.getLink({ slug: '/search_index.json' }), { cache: 'force-cache' })
