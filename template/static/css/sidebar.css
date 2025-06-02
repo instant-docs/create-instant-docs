@@ -1,25 +1,15 @@
-:root{
-    --color: #777;
-    --bg-color: #eee;
-}
+@import url('./color-themes/instant-docs.css');
+
 body {
     color: var(--color);
     background-color: var(--bg-color);
 }
-h1,h2,h3,h4,h5,h6,.header,.content-subhead{
-    color: var(--color)
-}
-a{
+
+a {
     color: inherit;
 }
-@media (prefers-color-scheme: dark) {
-    :root{
-        --color: #eee;
-        --bg-color: #242424;
-    }
-}
 
-.pure-img-responsive {
+img {
     max-width: 100%;
     height: auto;
 }
@@ -29,12 +19,14 @@ Add transition to containers so they can push in and out.
 */
 #layout,
 #menu,
-.menu-link {
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -ms-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
+a#menuLink,
+main {
+    /* Add main to transition for smooth content shift */
+    -webkit-transition: transform 0.3s ease-out;
+    -moz-transition: transform 0.3s ease-out;
+    -ms-transition: transform 0.3s ease-out;
+    -o-transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
 }
 
 /*
@@ -42,17 +34,11 @@ This is the parent `<div>` that contains the menu and the content area.
 */
 #layout {
     position: relative;
-    display: grid;
-    grid-template-columns: 0 1fr;
+    /* Hide horizontal overflow to prevent scrollbar when menu is off-screen */
     min-height: 100svh;
 }
-#layout.active {
-    grid-template-columns: 350px minmax(350px, 1fr);
-}
-/*
-The content `<div>` is where all your content goes.
-*/
-.content {
+
+main > article {
     margin: 0 auto;
     box-sizing: border-box;
     min-height: calc(100svh - 200px);
@@ -61,108 +47,98 @@ The content `<div>` is where all your content goes.
     line-height: 1.6em;
 }
 
-.header {
-     margin: 0;
-     color: #333;
-     text-align: center;
-     padding: 2.5em 2em 0;
-     border-bottom: 1px solid #eee;
- }
-    .header h1 {
-        margin: 0.2em 0;
-        font-size: 3em;
-        font-weight: 300;
-    }
-     .header h2 {
-        font-weight: 300;
-        color: #ccc;
-        padding: 0;
-        margin-top: 0;
-    }
-
-.content-subhead {
+/* Assuming content-subhead is a direct child of a section or has a unique ID */
+section h2:last-of-type { /* This is a heuristic, assuming content-subhead is the last h2 in a section */
     margin: 50px 0 20px 0;
     font-weight: 300;
-    color: #888;
+    color: var(--color-text-muted);
 }
 
 
-
 /*
-The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
+The `#menu` `<div>` is the parent `<div>` that contains the `<nav>` that
 appears on the left side of the page.
 */
 
 #menu {
-    max-width: 350px;
+    width: 350px;
+    /* Set explicit width for transform */
+    position: fixed;
+    /* Ensure it's fixed for off-canvas behavior */
     top: 0;
     left: 0;
     bottom: 0;
-    z-index: 1000; /* so the menu or its navicon stays above all content */
-    background: #191818;
-    overflow: visible;
+    z-index: 1000;
+    /* so the menu or its navicon stays above all content */
+    background: var(--color-menu-bg);
+    /* overflow-y: auto; /* Allow scrolling for menu content */
+    transform: translateX(-100%);
+    /* Hide initially off-screen */
 }
-    /*
+
+/*
     All anchors inside the menu should be styled like this.
     */
-    #menu a {
-        color: #999;
-        border: none;
-        padding: 0.6em 1em 0.6em 0.6em;
-    }
+#menu a {
+    color: var(--color-menu-text);
+    border: none;
+    padding: 0.6em 1em 0.6em 0.6em;
+}
 
-    #menu nav{
-        position: sticky;
-        top: 0;
-        overflow-y: auto;
-    }
+#menu nav {
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+}
 
-    /*
+/*
     Remove all background/borders, since we are applying them to #menu.
     */
-     #menu .pure-menu,
-     #menu .pure-menu ul {
-        border: none;
-        background: transparent;
-    }
+#menu nav,
+#menu nav ul {
+    border: none;
+    background: transparent;
+}
 
-    /*
+/*
     Add that light border to separate items into groups.
     */
-    #menu .pure-menu ul,
-    #menu .pure-menu .menu-item-divided {
-        border-top: 1px solid #333;
-    }
-        /*
+#menu nav ul { /* Targets .pure-menu ul and .menu-item-divided */
+    border-top: 1px solid var(--color-text-heading);
+}
+
+/*
         Change color of the anchor links on hover/focus.
         */
-        #menu .pure-menu li a:hover,
-        #menu .pure-menu li a:focus {
-            background: #333;
-        }
+#menu nav li:hover,
+#menu nav li:focus {
+    background: var(--color-menu-item-hover-bg);
+    color: var(--color-menu-item-hover-text);
+    /* Add text color for hover/focus */
+}
 
-    /*
+/*
     This styles the selected menu item `<li>`.
     */
-    #menu .pure-menu-selected,
-    #menu .pure-menu-heading {
-        background: #1f8dd6;
-    }
-        /*
+[aria-current="page"] { /* Added for expanded menu items */
+    font-weight: bold;
+}
+
+/*
         This styles a link within a selected menu item `<li>`.
         */
-        #menu .pure-menu-selected a {
-            color: #fff;
-        }
+#menu nav li[aria-current="page"] a { /* Targets .pure-menu-selected a */
+    color: var(--color-text-on-accent);
+}
 
-    /*
+/*
     This styles the menu heading.
     */
-    #menu .pure-menu-heading {
-        font-size: 110%;
-        color: #fff;
-        margin: 0;
-    }
+#menu nav div#logo-wrapper { /* Targets .pure-menu-heading */
+    font-size: 110%;
+    color: var(--color-text-on-accent);
+    margin: 0;
+}
 
 /* -- Dynamic Button For Responsive Menu -------------------------------------*/
 
@@ -172,64 +148,90 @@ how it works:
 */
 
 /*
-`.menu-link` represents the responsive menu toggle that shows/hides on
+`a#menuLink` represents the responsive menu toggle that shows/hides on
 small screens.
 */
 a#menuLink {
     position: fixed;
-    display: block; /* show this only on small screens */
+    display: block;
+    /* show this only on small screens */
     top: 0;
-    background: rgba(0,0,0,0.7);
-    font-size: 10px; /* change this value to increase/decrease button size */
-    z-index: 10;
+    left: 100%;
+    background: rgb(var(--accent));
+    font-size: 10px;
+    /* change this value to increase/decrease button size */
+    z-index: 1001;
+    /* Ensure it's above the menu */
     width: 2em;
     height: auto;
     padding: 2.1em 1.6em;
-    
+    border-radius: 2px
 }
-    #layout.active a#menuLink{
-        transform: translateX(350px);
-    }
 
-    .menu-link:hover,
-    .menu-link:focus {
-        background: #000;
-    }
+a#menuLink:hover,
+a#menuLink:focus {
+    background: var(--color-menu-link-hover-bg);
+}
 
-    .menu-link span {
-        position: relative;
-        display: block;
-    }
+a#menuLink span {
+    position: relative;
+    display: block;
+}
 
-    .menu-link span,
-    .menu-link span:before,
-    .menu-link span:after {
-        background-color: #fff;
-        pointer-events: none;
-        width: 100%;
-        height: 0.2em;
-    }
+a#menuLink span,
+a#menuLink span:before,
+a#menuLink span:after {
+    background-color: var(--color-text-on-accent);
+    pointer-events: none;
+    width: 100%;
+    height: 0.2em;
+}
 
-        .menu-link span:before,
-        .menu-link span:after {
-            position: absolute;
-            margin-top: -0.6em;
-            content: " ";
-        }
+a#menuLink span:before,
+a#menuLink span:after {
+    position: absolute;
+    margin-top: -0.6em;
+    content: " ";
+}
 
-        .menu-link span:after {
-            margin-top: 0.6em;
-        }
+a#menuLink span:after {
+    margin-top: 0.6em;
+}
 
 
 /* -- Responsive Styles (Media Queries) ------------------------------------- */
 
-@media not (min-width: 48em){
-    body:has(#layout.active){
+@media not (min-width: 48em) {
+    body:has(#layout[data-active="true"]) { /* Replaces body:has(#layout.active) */
         overflow: hidden;
     }
-    #layout.active main{
-        filter: blur(5px);
+
+    #menu{
+        position: fixed;
+    }
+
+    #layout[data-active="true"] main::before { /* Replaces #layout.active main::before */
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(var(--overlay-color), 0.75);
+        z-index: 999;
+        /* Below menu (1000) but above content */
+        opacity: .75;
+        transition: opacity 0.3s ease-out;
+    }
+
+    #layout[data-active="true"] #menu { /* Replaces #layout.active #menu */
+        transform: translateX(0);
+        /* Show menu when active */
+    }
+
+    /* Push content to the right when menu is active */
+    #layout[data-active="true"] main { /* Replaces #layout.active main */
+        transform: translateX(350px);
     }
 }
 
@@ -237,51 +239,62 @@ a#menuLink {
 Hides the menu at `48em`, but modify this based on your app's needs.
 */
 @media (min-width: 48em) {
-
-    .header,
-    .content {
+    main > div { /* Targets .header and .content */
         padding-left: 2em;
         padding-right: 2em;
     }
 
-    #layout {
-        grid-template-columns: 350px 1fr;
-    }
     #menu {
         transform: translateX(0);
+        /* Menu is always visible on large screens */
     }
-    #menuLink{
+
+    #layout {
+        padding-left: 350px;
+    }
+
+    #menuLink {
         display: none !important;
+        /* Hide hamburger button on large screens */
     }
 }
 
-#search-bar{
+#search-bar {
     color: var(--color);
     background-color: var(--bg-color);
     box-shadow: none;
     width: 100%;
 }
-#search-result-container{
+
+#search-result-container {
     position: relative;
-    border: 1px solid currentColor;
-    box-shadow: 0 0 2px currentColor;
+    border: 2px solid rgb(var(--accent));
     border-radius: 4px;
-    margin-top: 1rem;
+    margin-block: .5rem;
     box-sizing: border-box;
     transition: all .2s;
     max-height: 350px;
 }
-#search-result-container.hide{
+
+#search-result-container[data-hide="true"] { /* Removed as it's a class selector */
     opacity: 0;
     max-height: 0;
 }
+
 #search-result-container a {
     text-decoration: none;
 }
-#search-result-container h1,h2,h3,h4,h5,h6 {
+
+#search-result-container h1,
+#search-result-container h2,
+#search-result-container h3,
+#search-result-container h4,
+#search-result-container h5,
+#search-result-container h6 {
     text-decoration: underline;
 }
-.search-result-list{
+
+#search-result-container ol { /* Targets .search-result-list */
     margin: 0;
     padding: 0;
     display: grid;
@@ -291,85 +304,158 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     list-style: none;
     transition: all .2s;
 }
-.search-result-list>*,
-#search-result-container>:not(ol,ul){
+
+#search-result-container ol > *, /* Targets .search-result-list > * */
+#search-result-container > :not(ol, ul) {
+    color: inherit;
     padding: 1rem 2rem;
 }
-.search-result-list li:nth-child(even){
-    background-color: var(--color);
+
+/* #search-result-list li:nth-child(odd) { Removed color rule */
+/*     color: rgb(var(--accent)); */
+/*     background-color: rgb(var(--inverse-accent)); */
+/* } */
+
+#search-result-container li:nth-child(even) { /* Targets .search-result-list li:nth-child(even) */
+    background-color: rgb(var(--accent));
+    color: rgb(var(--color-text-on-accent));
 }
-.search-result-list li:nth-child(even) h4,
-.search-result-list li:nth-child(even) p{
-    color: var(--bg-color) !important;
-}
-.search-result-list li h4,
-.search-result-list li p{
+
+/* #search-result-list li:nth-child(even) h4, Removed color rule */
+/* #search-result-list li:nth-child(even) p { Removed color rule */
+/*     color: var(--bg-color) !important; */
+/* } */
+
+#search-result-container ol li h4, /* Targets .search-result-list li h4 */
+#search-result-container ol li p { /* Targets .search-result-list li p */
+    color: inherit;
     margin: 0;
 }
 
-#search-result-container:not(:has(*)){
+#search-result-container:not(:has(*)) {
     opacity: 0;
 }
 
-.expandable{
+li[role="group"] { /* Targets .expandable */
     list-style: none;
 }
 
-li>button[aria-controls]{
+li > button[aria-controls] {
     display: inline;
 }
 
-li>ol,li>ul{
+li > ol,
+li > ul {
     max-height: 0;
     /* transition: .3s; */
     overflow: hidden;
 }
-li.expanded>ol,li.expanded>ul{
+
+li[aria-expanded="true"] > ol,
+li[aria-expanded="true"] > ul {
     max-height: inherit;
     overflow: auto;
 }
 
-.expand-button{
+label input[type="checkbox"] { /* Targets .expand-button */
     display: none;
 }
-.chevron{
+
+.chevron {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.5rem;
-    color: red;
+    background-color: currentColor;
     width: 1rem;
     height: 40%;
     opacity: .6;
-    background-image: url('/assets/chevron.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
+    mask: url('/static/assets/chevron.svg');
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
     margin-inline: 1rem;
     user-select: none;
 }
-label:hover .chevron{
+
+[aria-expanded]:hover .chevron { /* Targets label:hover .chevron */
     opacity: .9;
 }
 
-.pure-menu-item label{
+[aria-expanded="true"]>div>label>.chevron{
+    transform: rotate(90deg);
+}
+
+#menu nav ul li label { /* Targets .pure-menu-item label */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.pure-menu-item label:hover{
+#menu nav ul li label:hover { /* Targets .pure-menu-item label:hover */
     cursor: pointer;
-    background: #333;
-}
-.expanded>.flex-menu-item .chevron{
-    transform: rotate(90deg);
+    background: var(--color-menu-item-hover-bg);
+    color: var(--color-menu-item-hover-text);
 }
 
-.flex-menu-item{
+li[role="group"] > div { /* Targets .flex-menu-item */
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     box-sizing: border-box;
 }
-.grow{
+
+li[role="group"] > div > a { /* Targets .grow */
     flex-grow: 1;
+}
+
+.dropdown { /* Targets .dropdown */
+    position: relative;
+    font-size: 10pt;
+    --background-opacity: .55;
+    background: rgba(var(--accent), var(--background-opacity));
+    border-radius: 0.2em;
+    text-align: left;
+    color: var(--color-text-on-accent);
+    cursor: pointer;
+}
+
+.dropdown:hover { /* Targets .dropdown:hover */
+    --background-opacity: 1;
+}
+
+.dropdown::after { /* Targets .dropdown::after */
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    right: .5em;
+    width: 1em;
+    height: 90%;
+    transform: rotate(90deg);
+    mask: url('/static/assets/chevron.svg');
+    mask-repeat: no-repeat;
+    mask-size: auto 1em;
+    mask-position: right center;
+    background-color: currentColor;
+}
+
+.dropdown:has(select:focus-visible) { /* Targets .dropdown:has(select:focus-visible) */
+    outline: 2px solid rgb(var(--inverse-accent));
+}
+
+.dropdown input, /* Targets .dropdown input */
+.dropdown select { /* Targets .dropdown select */
+    appearance: none;
+    display: inline-block;
+    width: 100%;
+    color: inherit;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: inherit;
+    text-align: inherit;
+    padding: 0.4em;
+    padding-right: 2em;
+}
+
+.dropdown select option { /* Targets .dropdown select option */
+    background: rgb(var(--accent));
 }

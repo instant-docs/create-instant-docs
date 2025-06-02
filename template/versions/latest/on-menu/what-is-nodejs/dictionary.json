@@ -1,0 +1,24 @@
+{
+  "en": {
+    "title": "What is Node.js?",
+    "intro_paragraph": "Node.js is a runtime environment that allows you to run JavaScript on the server side. It's built on Chrome's V8 JavaScript engine and it uses an event-driven, non-blocking I/O model which makes it lightweight and efficient.",
+    "key_features_heading": "Key Features:",
+    "event_driven_model_bullet": "Event-Driven Model:",
+    "event_driven_model_content": "Node.js uses events to handle requests asynchronously, making it fast and scalable.",
+    "single_threaded_bullet": "Single Threaded but Highly Concurrent:",
+    "single_threaded_content": "It can handle multiple connections simultaneously with a single thread, thanks to its non-blocking I/O operations.",
+    "wide_range_packages_bullet": "Wide Range of Packages:",
+    "wide_range_packages_content": "With npm (Node Package Manager), you have access to millions of reusable packages to speed up development."
+  },
+  "fr": {
+    "title": "Que est Node.js ?",
+    "intro_paragraph": "Node.js est un environnement d'exécution qui vous permet de exécuter du JavaScript côté serveur. Il est basé sur l'moteur JavaScript V8 de Chrome et utilise un modèle d'entrée/sortie eventuel et non bloquant, ce qui le rend léger et efficace.",
+    "key_features_heading": "Fonctionnalités clés :",
+    "event_driven_model_bullet": "Modèle eventuel:",
+    "event_driven_model_content": "Node.js utilise des événements pour gérer les demandes de manière asynchrone, ce qui le rend rapide et skalable.",
+    "single_threaded_bullet": "Threaded unique mais fortement concurrent:",
+    "single_threaded_content": "Il peut gérer plusieurs connexions simultanément avec un seul thread grâce à ses opérations d'entrée/sortie non bloquantes.",
+    "wide_range_packages_bullet": "Gamme large de packages:",
+    "wide_range_packages_content": "Avec npm (Node Package Manager), vous avez accès à millions de packages réutilisables pour accélérer le développement."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "en": {
+    "welcome_title": "Welcome to Node.js Documentation",
+    "intro_paragraph": "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It allows developers to execute JavaScript code outside of a browser, making it ideal for server-side development.",
+    "what_is_nodejs_heading": "1. What is Node.js?",
+    "what_is_nodejs_link": "Read more about what Node.js is and its key features.",
+    "installing_nodejs_heading": "2. Installing Node.js",
+    "installing_nodejs_link": "Find out how to install Node.js on your system here.",
+    "basic_concepts_heading": "3. Basic Concepts in Node.js",
+    "basic_concepts_link": "Understand the fundamental concepts of Node.js including event loop and non-blocking I/O."
+  },
+  "fr": {
+    "welcome_title": "Bienvenue dans la documentation de Node.js",
+    "intro_paragraph": "Node.js est un environnement d'exécution JavaScript construit sur l'engin de compilation V8 de Chrome. Il permet aux développeurs d'exécuter du code JavaScript en dehors des navigateurs, ce qui le rend idéal pour le développement côté serveur.",
+    "what_is_nodejs_heading": "1. Qu'est-ce que Node.js ?",
+    "what_is_nodejs_link": "Lisez plus sur ce qu'est Node.js et ses principales fonctionnalités.",
+    "installing_nodejs_heading": "2. Installation de Node.js",
+    "installing_nodejs_link": "Découvrez comment installer Node.js sur votre système.",
+    "basic_concepts_heading": "3. Concepts de base en Node.js",
+    "basic_concepts_link": "Comprenez les concepts fondamentaux de Node.js, y compris la boucle d'événements et l'E/S non bloquante."
+  }
+}
