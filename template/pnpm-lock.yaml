@@ -15,8 +15,8 @@ importers:
         specifier: ^1.7.1
         version: 1.7.1
       instant-docs:
-        specifier: ^3.2.1
-        version: 3.2.1
+        specifier: ^4.0.0
+        version: 4.0.0
     devDependencies:
       nodemon:
         specifier: ^3.1.10
@@ -420,8 +420,8 @@ packages:
       debug:
         optional: true
 
-  form-data@4.0.2:
-    resolution: {integrity: sha512-hGfm/slu0ZabnNt4oaRZ6uREyfCj6P4fT/n6A1rGV+Z0VdGXjfOhVUpkn6qVQONHGIFwmveGXyDs75+nr6FM8w==}
+  form-data@4.0.3:
+    resolution: {integrity: sha512-qsITQPfmvMOSAdeyZ+12I1c+CKSstAFAwu+97zrnWAbIr5u8wfsExUzCesVLC8NgHuRUqNN4Zy6UPWUTRGslcA==}
     engines: {node: '>= 6'}
 
   forwarded@0.2.0:
@@ -499,8 +499,8 @@ packages:
   instajax@1.7.1:
     resolution: {integrity: sha512-mhmqaTRH0l0E/sZZ5K6AJop89Fw4cSqrifd/7gBKxPCvc0O+pvsaKgwIPLnTf8YFJpuckyJIGaHo0y8/WKPo/g==}
 
-  instant-docs@3.2.1:
-    resolution: {integrity: sha512-Lo/0EhNVlIaG+l3H0MBkZ+H1nxgfSEXZgrtIRM1y1Qyg9pQJFj2Bo0EtRHR/rMHHO6IIutQEUoe7gQ7J5PbnXQ==}
+  instant-docs@4.0.0:
+    resolution: {integrity: sha512-I7h+Vh0U6Xamajipz51gJ09Y6CxHQ2F273rdl5G6MbepCCXsk8esvgZAD7Fe0eg2XbpIMihCRHXbb+NzhkvyIA==}
     hasBin: true
 
   ipaddr.js@1.9.1:
@@ -836,7 +836,7 @@ snapshots:
   axios@1.9.0:
     dependencies:
       follow-redirects: 1.15.9
-      form-data: 4.0.2
+      form-data: 4.0.3
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
@@ -1136,11 +1136,12 @@ snapshots:
 
   follow-redirects@1.15.9: {}
 
-  form-data@4.0.2:
+  form-data@4.0.3:
     dependencies:
       asynckit: 0.4.0
       combined-stream: 1.0.8
       es-set-tostringtag: 2.1.0
+      hasown: 2.0.2
       mime-types: 2.1.35
 
   forwarded@0.2.0: {}
@@ -1219,7 +1220,7 @@ snapshots:
 
   instajax@1.7.1: {}
 
-  instant-docs@3.2.1:
+  instant-docs@4.0.0:
     dependencies:
       axios: 1.9.0
       cheerio: 1.0.0
