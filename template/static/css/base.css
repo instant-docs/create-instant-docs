@@ -25,6 +25,7 @@ button,
 textarea,
 select {
   font: inherit;
+  color: inherit;
 }
 
 article h1{
@@ -93,9 +94,8 @@ legend {
 }
 
 :focus-visible {
-  outline: 2px solid;
-  /* Removed 'Highlight' color */
-  outline-offset: 2px;
+  outline: thin auto currentColor;
+  outline-offset: 0;
 }
 
 main {
@@ -282,81 +282,6 @@ form legend {
   form label {
     text-align: left;
     width: 100%;
-  }
-}
-
-/* Footer styles from temp.html (adapted to tag/ID selectors) */
-footer {
-  box-sizing: border-box;
-  padding: 2rem;
-  height: 200px;
-}
-
-footer>div {
-  /* Targets <div class="grid"> */
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: end;
-  gap: 2rem;
-}
-
-footer>div>div {
-  /* Targets <div class="column"> */
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-footer>div>div a {
-  /* Targets <a> inside <div class="column"> */
-  display: contents;
-}
-
-footer img {
-  /* Targets <img class="footer-icon"> */
-  height: 1rem;
-  width: auto;
-  object-fit: contain;
-}
-
-/* Specific styles from temp.html <style> block */
-#logo-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  padding: .5rem;
-  padding-right: 1rem;
-  color: var(--color);
-  /* Kept as it's a CSS variable */
-}
-
-#logo-wrapper a {
-  padding: 0;
-  color: inherit;
-  /* Kept as it's 'inherit' */
-  display: flex;
-  align-items: center;
-  margin-right: .5em;
-  text-decoration: none;
-  max-width: 200px;
-  font-size: 16pt;
-}
-
-#logo {
-  display: block;
-  height: 2em;
-  width: 150px;
-  background-image: url('/static/assets/logo_dark.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-@media (prefers-color-scheme: dark) {
-  #logo {
-    background-image: url('/static/assets/logo.svg');
   }
 }
 

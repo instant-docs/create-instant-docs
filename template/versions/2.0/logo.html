@@ -1,42 +1,9 @@
-<style>
-  #logo-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem;
-    padding: .5rem;
-    padding-right: 1rem;
-    /* background: var(--accent); */
-    color: var(--color);
-  }
-  #logo-wrapper a {
-    padding: 0;
-    color: inherit;
-    display: flex;
-    align-items: center;
-    margin-right: .5em;
-    text-decoration: none;
-    max-width: 200px;
-    font-size: 16pt;
-  }
-
-  #logo {
-    display: block;
-    height: 2em;
-    width: 150px;
-    background-image: url('/static/assets/logo_dark.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  /* dark mode media query */
-  @media (prefers-color-scheme: dark) {
-    #logo {
-      background-image: url('/static/assets/logo.svg');
-    }
-  }   
-</style>
 <div id="logo-wrapper">
-  <a href="%home_link%" id="logo"></a>
+  <a href="%home_link%" id="logo" aria-label="Home">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="/static/assets/logo.svg">
+      <img src="/static/assets/logo_dark.svg" alt="Logo">
+    </picture>
+  </a>
   %version_options%
 </div>

@@ -13,6 +13,7 @@ window.onload = () => {
         if (node == undefined) return;
         if (node.tagName === 'LI' && node.role === "group"){
             node.setAttribute('aria-expanded', 'true');
+            node.querySelector('.expand-button').setAttribute('aria-expanded', 'true');
         }
         return expandAllParentLists(node.parentElement);
     }
@@ -64,12 +65,13 @@ window.onload = () => {
         }
     });
     
-    const expandButtons = document.querySelectorAll('label input[type="checkbox"]');
+    const expandButtons = document.querySelectorAll('.expand-button');
     expandButtons.forEach(button => {
-        button.addEventListener('change', function(){
-            const parentList = this.parentElement.parentElement.parentElement;
+        button.addEventListener('click', function(){
+            const parentList = this.parentElement.parentElement;
             const isExpanded = parentList.getAttribute('aria-expanded') === 'true';
             parentList.setAttribute('aria-expanded', !isExpanded);
+            button.setAttribute('aria-expanded', !isExpanded);
         });
     });
 }());
