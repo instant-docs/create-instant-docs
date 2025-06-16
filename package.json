@@ -1,6 +1,6 @@
 {
   "name": "create-instant-docs",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "description": "CLI tool to create app with instant-docs framework",
   "bin": "index.js",
   "type": "commonjs",
@@ -18,5 +18,13 @@
   "license": "AGPL-3.0-only",
   "dependencies": {
     "copy-folder-util": "^1.1.4"
-  }
+  },
+  "files": [
+    "index.js",
+    "package.json",
+    "README.MD",
+    "LICENSE",
+    "template",
+    "template/.gitignore"
+  ]
 }

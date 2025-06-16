@@ -1,4 +1,2 @@
 node_modules/
-static/plugins/
-static/search_index_*.json
 dist/
