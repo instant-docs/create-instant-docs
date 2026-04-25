@@ -1,6 +1,6 @@
 {
   "name": "create-instant-docs",
-  "version": "7.0.1",
+  "version": "8.0.0",
   "description": "CLI tool to create app with instant-docs framework",
   "bin": "index.js",
   "type": "commonjs",
