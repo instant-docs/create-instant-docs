@@ -6,7 +6,7 @@
   "scripts": {
     "start": "instant-docs",
     "build": "instant-docs --build",
-    "dev": "nodemon"
+    "dev": "bun --watch instant-docs"
   },
   "keywords": [],
   "author": "",
@@ -14,9 +14,7 @@
   "dependencies": {
     "cheerio": "^1.0.0",
     "instajax": "^1.7.1",
-    "instant-docs": "^4.0.0"
+    "instant-docs": "^6.0.0"
   },
-  "devDependencies": {
-    "nodemon": "^3.1.10"
-  }
+  "devDependencies": {}
 }

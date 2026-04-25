@@ -14,7 +14,10 @@
 ## %d%.macos_heading
 
 1. **%d%.homebrew_step**
-   %d%.homebrew_content
+   
+   ```sh
+   brew install node
+   ```
 
 2. **%d%.macos_download_installer_step**
    %d%.macos_download_installer_content
@@ -28,10 +31,27 @@
 ## %d%.ubuntu_debian_heading
 
 1. **%d%.ubuntu_default_repo_step**
-   %d%.ubuntu_default_repo_content
+   %d%.ubuntu_default_repo_content_text
+   
+   ```sh
+   sudo apt update
+   ```
+   
+   ```sh
+   sudo apt install nodejs npm
+   ```
+   
+   ```sh
+   sudo apt install node-legacy
+   ```
 
 2. **%d%.ubuntu_default_repo_alt_step**
-   %d%.ubuntu_default_repo_alt_content
+   %d%.ubuntu_default_repo_alt_content_text
+   
+   ```sh
+   curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash -
+   sudo apt install nodejs
+   ```
 
 3. **%d%.ubuntu_verify_installation_step**
    %d%.ubuntu_verify_installation_content
@@ -39,7 +59,15 @@
 ## %d%.fedora_heading
 
 1. **%d%.fedora_default_repo_step**
-   %d%.fedora_default_repo_content
+   %d%.fedora_default_repo_content_text
+   
+   ```sh
+   sudo dnf update
+   ```
+   
+   ```sh
+   sudo dnf install nodejs
+   ```
 
 2. **%d%.fedora_verify_installation_step**
    %d%.fedora_verify_installation_content
